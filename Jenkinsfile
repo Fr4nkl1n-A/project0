@@ -22,7 +22,7 @@ pipeline {
 			sh 'docker ps -aq --filter "name=project0" | xargs --no-run-if-empty docker rm'
                 	
 			// run the container again
-			sh 'docker run -d -p 3000:3000 project0'
+			sh 'docker run -d --name project0 -p 3000:3000 project0'
 		}
             }
         }
