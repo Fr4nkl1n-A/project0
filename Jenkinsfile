@@ -16,7 +16,14 @@ pipeline {
         
         stage ('deploy') {
             steps {
-                sh 'docker run -d -p 3000:3000 project0'
+		script {
+			// stop and remove existing container
+			sh 'docker ps -q --filter "name=project0" | xargs --no-run-if-empty docker stop'
+			sh 'docker ps -aq --filter "name=project0" | xargs --no-run-if-empty docker rm'
+                	
+			// run the container again
+			sh 'docker run -d -p 3000:3000 project0'
+		}
             }
         }
     }
