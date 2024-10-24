@@ -3,6 +3,9 @@
 ## Description
 This project demonstrates the process of deploying a containerized web app using Docker and Jenkins on an AWS EC2 instance. This simple application provides a random quote when the button is clicked, and the CI/CD pipeline automates the build and deployment process.
 
+## Project Architecture
+![Project Diagram](./Diagram.jpg)
+
 ## Features
 - Automated build and deployment using Jenkins.
 - Containerization with Docker for easy deployment and scalability.
